@@ -6,11 +6,12 @@ Dieses Projekt ermöglicht die einfache Steuerung eines BenQ-Projektors über ei
 
 - Ein- und Ausschalten des Projektors
 - Abfrage des Projektorstatus
-- Einfache Integration in Home Assistant
+- Integration in Home Assistant
 
 ## Voraussetzungen
 
 - ESP8266-Board (z.B. NodeMCU)
+- RS232 TTL Adapter + Kabel - MAX3232 3V-5V Serial Port Converter Modul Female DB9
 - BenQ-Projektor (in meinem fall W2700 oder HT3550)  mit serieller Schnittstelle
 
 ## Installation
@@ -47,11 +48,12 @@ This project enables easy control of a BenQ projector using an ESP8266 microcont
 
 - Turn the projector on and off
 - Query the projector status
-- Easy integration with Home Assistant
+- integration with Home Assistant
 
 ## Requirements
 
 - ESP8266 board (e.g., NodeMCU)
+- RS232 TTL Adapter + Kabel - MAX3232 3V-5V Serial Port Converter Modul Female DB9
 - BenQ projector (in my case W2700 or HT3550) with a serial interface
 
 ## Installation
