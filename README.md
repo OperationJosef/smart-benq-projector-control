@@ -1,5 +1,7 @@
 # ESP8266 BenQ Projektorsteuerung
 
+![alt text](https://github.com/OperationJosef/smart-benq-projector-control/blob/main/Benq-Remote-mounted.png)
+
 Dieses Projekt ermöglicht die einfache Steuerung eines BenQ-Projektors über einen ESP8266-Mikrocontroller und die Integration in dein Home Automation-System.
 
 ## Funktionen
@@ -85,3 +87,4 @@ We welcome bug reports and suggestions for improvement. If you'd like to contrib
 
 ![alt text](https://github.com/OperationJosef/smart-benq-projector-control/blob/main/Benq-Remote-Overview%202.png)
 ![alt text](https://github.com/OperationJosef/smart-benq-projector-control/blob/main/Benq-Remote-Overview%201.png)
+![alt text](https://github.com/OperationJosef/smart-benq-projector-control/blob/main/Benq-Remote-mounted.png)
