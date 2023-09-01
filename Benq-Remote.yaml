@@ -1,0 +1,72 @@
+esphome:
+  includes:
+    - uart_read_line_sensor.h
+  name: benq-remote
+  friendly_name: benq-remote
+  platform: ESP8266
+  board: nodemcuv2
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "YourEncryptionKEY"
+
+ota:
+  password: "YourOTApassword"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "YourHotspot"
+    password: "YourPassword"
+
+captive_portal:
+
+uart:
+  id: uart_bus
+  tx_pin: GPIO5
+  rx_pin: GPIO4
+  baud_rate: 9600
+interval:
+  - interval: 10s
+    then:
+      - uart.write: "\r*pow=?#\r"
+text_sensor:
+  - platform: custom
+    lambda: |-
+      auto my_custom_sensor = new UartReadLineSensor(id(uart_bus));
+      App.register_component(my_custom_sensor);
+      return {my_custom_sensor};
+    text_sensors:
+      id: "uart_power_state"
+      name: "Status Sensor Benq"
+switch:
+  - platform: template
+    id: "projector_power"
+    name: "Projector Power"
+    icon: "mdi:projector"
+    lambda: |-
+      if (id(uart_power_state).state == "*POW=ON#") {
+        return true;
+      } else if(id(uart_power_state).state == "*POW=OFF#") {
+        return false;
+      } else {
+        return {};
+      }
+    turn_on_action:
+      - uart.write: "\r*pow=on#\r"
+    turn_off_action:
+      - uart.write: "\r*pow=off#\r"
+      - delay: 2 s
+      - uart.write: "\r*pow=off#\r"
+mqtt:
+  broker: "YourMQTT-IP"
+  username: !secret mqtt_user
+  password: !secret mqtt_passwd
+  discovery: true
