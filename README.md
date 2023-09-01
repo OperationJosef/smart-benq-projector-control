@@ -19,10 +19,11 @@ Dieses Projekt ermöglicht die einfache Steuerung eines BenQ-Projektors über ei
 1. Klone dieses Repository auf deinen Computer.
 2. Passe die `esphome.yaml`-Datei an deine Konfiguration an.
 3. Lade die ESPHome-Firmware auf deinen ESP8266-Mikrocontroller hoch.
+4. Lade die uart_read_line_sensor.h Datei in folgendes Verzeichniss " /config/esphome " (Falls du HomeAssistant nutzt) 
 
 ## Konfiguration
 
-In der `esphome.yaml`-Datei findest du Einstellungen, um die UART-Kommunikation mit deinem Projektor anzupassen. Passe sie an deine Projektoranforderungen an.
+In der `benq-remote.yaml`-Datei findest du Einstellungen, um die UART-Kommunikation mit deinem Projektor anzupassen. Passe sie an deine Projektoranforderungen an.
 
 ## Verwendung
 
@@ -61,10 +62,11 @@ This project enables easy control of a BenQ projector using an ESP8266 microcont
 1. Clone this repository to your computer.
 2. Customize the `esphome.yaml` file to match your configuration.
 3. Upload the ESPHome firmware to your ESP8266 microcontroller.
+4. Load the uart_read_line_sensor.h file into the following directory " /config/esphome " (if you use HomeAssistant)
 
 ## Configuration
 
-In the `esphome.yaml` file, you will find settings to customize UART communication with your projector. Adjust them to fit your projector requirements.
+In the `benq-remote.yaml` file, you will find settings to customize UART communication with your projector. Adjust them to fit your projector requirements.
 
 ## Usage
 
